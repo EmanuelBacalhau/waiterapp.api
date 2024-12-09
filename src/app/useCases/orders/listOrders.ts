@@ -7,8 +7,6 @@ export async function listOrders(req: Request, res: Response) {
       .sort({
         createdAt: 1,
       })
-      .where('status')
-      .ne('DONE')
       .populate('products.product');
 
     res.json(orders);
